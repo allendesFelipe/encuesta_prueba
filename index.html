@@ -1,0 +1,177 @@
+<!--
+Encuesta Elecciones Valparaiso - Desarrollo Web 2016 - Universidad de Valparaíso
+===================================================================
+Copyright © 2016 Felipe Allendes. All rights reserved.
+https://github.com/allendesfelipe/encuesta_prueba
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Proyecto para enseñar el funcionamiento de un formulario en PHP">
+  <meta name="keywords" content="html, bootstrap, php, formulario, desarrollo, web">
+  <meta name="author" content="Felipe Allendes">
+  <title>Encuesta Elecciones Valparaiso.</title>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+</head>
+
+
+
+<body>
+<div class="container">
+  <h1>Encuesta Elecciones Valparaiso.</h1>
+  <!-- Formulario -->
+  <form enctype="multipart/form-data" method="post" action="./enviar.php" accept-charset="UTF-8">
+    <!-- Hidden -->
+    <input type="hidden" name="enviado" value="1">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Encuesta</h3>
+      </div>
+      <div class="panel-body">
+        <!-- Texto -->
+
+        <div class="form-group">
+          <b>Nombre :</b>
+          <input type="text" class="form-control" name="nombre" placeholder="Ingrese su nombre">
+        </div>
+
+        <!-- RUT -->
+        <div class="form-group">
+          <b>RUT :</b>
+          <input type="text" class="form-control" name="RUT" placeholder="Ingrese su RUT">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <b>Correo electrónico :</b>
+          <input type="email" class="form-control" name="correo" placeholder="Ingrese su correo electrónico">
+        </div>
+
+        <!-- Select -->
+        <div class="form-group">
+          <b>Año de nacimiento :</b><br />
+          <select name="aniona" class="form-control">
+            <option value="">Seleccione un año</option>
+            <option value="1990">1990</option>
+            <option value="1991">1991</option>
+            <option value="1992">1992</option>
+            <option value="1993">1993</option>
+            <option value="1994">1994</option>
+            <option value="1995">1995</option>
+            <option value="1996">1996</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <b>Region :</b><br />
+          <select name="region" class="form-control">
+            <option value="">Seleccione su Region :</option>
+            <option value="I">I</option>
+            <option value="II">II</option>
+            <option value="III">III</option>
+            <option value="IV">IV</option>
+            <option value="V">V</option>
+            <option value="VI">VI</option>
+            <option value="VII">VII</option>
+            <option value="VIII">VIII</option>
+            <option value="IX">IX</option>
+            <option value="X">X</option>
+            <option value="XI">XI</option>
+            <option value="XII">XII</option>
+          </select>
+        </div>
+         <!-- Comuna -->
+        <div class="form-group">
+          <b>Comuna :</b>
+          <input type="comuna" class="form-control" name="comuna" placeholder="Ingrese su comuna">
+        </div>
+        <!-- CANDIDATO ALCALDE VALPARAISO -->
+        <div class="form-group">
+          <b>Candidato Alcalde :</b><br />
+          <select name="candidatoal" class="form-control">
+
+            <option value="">Seleccione su candidato a Concejal :</option>
+            <option value="Leopoldo Méndez Alcayaga">Leopoldo Méndez Alcayaga</option>
+            <option value="Jorge Castro Muñoz">Jorge Castro Muñoz</option>
+            <option value="Carlos Lemus Cid">Carlos Lemus Cid</option>
+            <option value="Jorge Esteban Sharp Fajardo">Jorge Esteban Sharp Fajardo</option>
+          </select>
+        </div>
+        <!-- CANDIDATO CONCEJAL VALPARAISO -->
+        <div class="form-group">
+          <b>Candidato Concejal :</b><br />
+          <select name="candidatocon" class="form-control">
+            <option value="">Seleccione su candidato a Alcalde :</option>
+            <option value="JULIA ELENA AGUILERA MAYA">JULIA ELENA AGUILERA MAYA</option>
+            <option value="CLAUDIO CARMONA CORREA">CLAUDIO CARMONA CORREA</option>
+            <option value="MARCO TORRES ALVAREZ">MARCO TORRES ALVAREZ</option>
+            <option value="DANIEL MORALES ESCUDERO">DANIEL MORALES ESCUDERO</option>
+            <option value="MARCELA VILLANUEVA">MARCELA VILLANUEVA</option>
+            <option value="PABLO RAMíREZ VENEGAS P - 85">PABLO RAMíREZ VENEGAS P - 85</option>
+            <option value="RONNY MUÑOZ CABRERA">RONNY MUÑOZ CABRERA</option>
+            <option value="ROSA ALEGRE NARVáEZ LISTA H 21">ROSA ALEGRE NARVáEZ LISTA H 21</option>
+            <option value="JORGE BUSTOS BUSTOS - LISTA M 63">JORGE BUSTOS BUSTOS - LISTA M 63</option>
+            <option value="MARCELO BARRAZA VIVAR">MARCELO BARRAZA VIVAR</option>
+            <option value="HECTOR ISIDRO PINO CORTEZ">HECTOR ISIDRO PINO CORTEZ</option>
+          </select>
+        </div>
+        
+        <!-- File 
+        <div class="form-group">
+          <b>Foto de perfil</b>
+          <input type="file" class="form-control" name="foto">
+        </div>-->
+        <!-- Textarea -->
+        <div class="form-group">
+          <b>Descripción o comentario :</b><br />
+          <textarea class="form-control" name="descripcion" placeholder="Ingrese una descripción"></textarea>
+        </div> 
+        
+        <!-- Radio -->
+        <div class="form-group">
+          <b>Sexo :</b><br />
+          <input type="radio" name="sexo" value="m"> Masculino<br />
+          <input type="radio" name="sexo" value="f"> Femenino<br />
+          <input type="radio" name="sexo" value="f"> No responde<br />
+        </div>
+
+        <!-- Checkbox -->
+        <div class="form-group">
+          <b>Esta contento con su Ciudad :</b><br />
+          <input type="checkbox" name="terminos" value="1"> Agradecido por el servicio entregado .<br />
+          <input type="checkbox" name="terminos2" value="1"> Acepto y quiero recibir correos basura de estos mentirosos.<br />
+        </div>
+
+        <div class="form-group">
+          <input type="checkbox" name="contenido" value="1"> <b>¿Ver la estructura del contenido que se envió?</b>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="text-right">
+          <a href="./" class="btn btn-primary">
+            <i class="glyphicon glyphicon-repeat"></i>
+            Reiniciar
+          </a>
+          <!-- Button submit -->
+          <button type="submit" class="btn btn-success">
+            Enviar
+            <i class="glyphicon glyphicon-menu-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <!-- Pie de página -->
+  <footer>
+    <div class="text-center">
+      <i class="glyphicon glyphicon-leaf"></i>
+      Desarrollado por <a href="https://github.com/allendesfelipe" target="_blank">Felipe Allendes</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
